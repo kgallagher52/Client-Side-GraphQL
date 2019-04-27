@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
 import { graphql,compose } from 'react-apollo'; //compose - allows you to wrap the component with mutations & queries
 import { getAuthorsQuery } from '../graphQL/queries';
-import { getAddBook, addBookMutation } from '../graphQL/mutations';
-import { get } from 'http';
-
-
+import { addBookMutation } from '../graphQL/mutations';
 
  function AddBook(props) {
     const { getAuthorsQuery,addBookMutation } = props;
@@ -25,7 +22,9 @@ import { get } from 'http';
         }
     const submitBook = () => {
         var newBook = {"name":name,"genre":genre,"authorId":id}
-        addBookMutation()
+        addBookMutation({
+            variables: newBook
+        })
     }
 
     return (

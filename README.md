@@ -7,6 +7,20 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
     3. GraphQL
 
+## Mutations
+    1. Passing in Variables
+       ``` - Ex: const addBookMutation = gql`
+                mutation ($name: String!,$genre: String!$authorId: ID!){
+                    addBook(name:$name,genre:$genre,authorId:$authorId) {
+                        name
+                        genre
+                    }
+                }
+            ` ```
+            - $ - Telling the query that it's a variable
+            - String - The type of data it is.
+            - ! - Saying that this is a reqired field
+
 ## Package Knowledge
     1. apollo-boost
         - Apollo Boost is just a bundle of necessary packages for apollo client
