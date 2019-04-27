@@ -7,9 +7,34 @@ body {
   text-align: center;
   
 }
+#authorsContainer {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#authorsContainer form {
+  display: inline-flex;
+  margin: 12px;
+}
+#authorsContainer form label {
+  color: black;
+  font-weight: 500;
+  padding-bottom: 8px;
+}
+#authorsContainer form div {
+  padding: 2px 12px;
+}
+
+#authorsContainer form button,option {
+  border-radius: 15%;
+  width: fit-content;
+  margin: 0;
+  cursor: pointer;
+
+}
 
 /* Books Table */
-#books-container table {
+#booksContainer table {
   list-style: none;
   color:rgb(74, 61, 61);
 }

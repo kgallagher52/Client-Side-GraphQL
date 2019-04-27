@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { gql } from 'apollo-boost'; // This package helps parse the data because graphQl is not javascript
 import { graphql } from 'react-apollo'; // Helps bind apollo to react
 
@@ -15,8 +15,6 @@ const getBooksQuery = gql`
  function BookList(props) {
      const { data } = props;
      const { books, loading } = data;
-     
-     console.log("Books",books);
      const displayBooks = () => {
         if(loading) {
             return <tr><th colSpan="6">Loading Books...</th></tr>
@@ -34,7 +32,7 @@ const getBooksQuery = gql`
      
 
   return (
-    <div id="books-container">
+    <div id="booksContainer">
         <table>
             <tbody>
                 <tr>

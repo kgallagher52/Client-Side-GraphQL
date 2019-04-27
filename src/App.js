@@ -4,6 +4,8 @@ import ApolloClient from 'apollo-boost'; // Apollo Boost is just a bundle of nec
 import { ApolloProvider } from 'react-apollo'; //Binds Apollo to react wraps our application
 //Components
 import BookList from './components/BookList';
+import AddBook from './components/AddBook';
+
 
 //Style Sheets
 import './styles/index.css';
@@ -20,6 +22,7 @@ function App() {
       <div className="App">
         <h1>Book Reading List</h1>
         <BookList/>
+        <AddBook/>
       </div>
     </ApolloProvider>
 
