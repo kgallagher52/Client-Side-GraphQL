@@ -7,7 +7,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
     3. GraphQL
 
+##Resources
+1.Apollo
+    https://www.apollographql.com/docs/react/essentials/get-started
+2.Tutorial
+    https://youtu.be/ed8SzALpx1Q
+
 ## Available Scripts
+
 
 In the project directory, you can run:
 
