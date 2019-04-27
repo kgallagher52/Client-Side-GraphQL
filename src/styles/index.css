@@ -1,0 +1,8 @@
+body {
+  background: -webkit-linear-gradient(90deg,#68C4C9, #41c9d6, #37b9e9);
+  background:    -moz-linear-gradient(90deg,#68C4C9, #41c9d6, #37b9e9);
+  background:         linear-gradient(90deg,#68C4C9, #41c9d6, #37b9e9);
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
