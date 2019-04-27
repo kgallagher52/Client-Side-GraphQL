@@ -10,7 +10,7 @@ import './styles/index.css';
 
 //Apollo Configuration 
 const client = new ApolloClient({
-  url:'http://localhost:5000/graphql'
+  uri:'http://localhost:5000/graphql'
 });
 
 function App() {
