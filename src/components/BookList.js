@@ -2,6 +2,9 @@ import React from 'react';
 import { graphql } from 'react-apollo'; // Helps bind apollo to react
 import { getBooksQuery } from '../graphQL/queries';
 
+//Components
+import BookDetails from './BookDetails';
+
  function BookList(props) {
      const { data } = props;
      const { books, loading } = data;
@@ -32,6 +35,7 @@ import { getBooksQuery } from '../graphQL/queries';
                 {displayBooks()}
             </tbody>
         </table>
+        <BookDetails/>
     </div>
   )
 }

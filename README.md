@@ -32,6 +32,19 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
                         `
     2. Re-Fetching queries
         - refetchQueries: [{ query: getAuthorsQuery }]
+        
+    3. Getting specific data
+        - Ex:  query($id: String) {
+                book(id: $id) { 
+                    id
+                    name
+                    author{
+                        name
+                        books{
+                            name
+                        }
+                    }
+                }
 
 
 ## Package Knowledge
