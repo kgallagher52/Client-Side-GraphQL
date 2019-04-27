@@ -21,6 +21,19 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
             - String - The type of data it is.
             - ! - Saying that this is a reqired field
 
+## Queries
+    1. Ex: const getAuthorsQuery = gql`
+                            {
+                                authors{
+                                    id
+                                    name
+                                }
+                            }
+                        `
+    2. Re-Fetching queries
+        - refetchQueries: [{ query: getAuthorsQuery }]
+
+
 ## Package Knowledge
     1. apollo-boost
         - Apollo Boost is just a bundle of necessary packages for apollo client
