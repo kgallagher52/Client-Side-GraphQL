@@ -1,43 +1,55 @@
-import React from 'react';
-import { graphql } from 'react-apollo'; // Helps bind apollo to react
-import { getAuthorsQuery } from '../queries/queries.js';
+import React, { useState } from 'react';
+import { graphql,compose } from 'react-apollo'; //compose - allows you to wrap the component with mutations & queries
+import { getAuthorsQuery } from '../graphQL/queries';
+import { getAddBook, addBookMutation } from '../graphQL/mutations';
+import { get } from 'http';
+
 
 
  function AddBook(props) {
-    const { data } = props;
-    const { authors, loading } = data;
-     
-    console.log("Authors",authors);
+    const { getAuthorsQuery,addBookMutation } = props;
+    const { authors, loading } = getAuthorsQuery;
+    const [name, updateName] = useState('');
+    const [genre, updateGenre] = useState('');
+    const [id, updateId] = useState('');
 
-   const displayAuthors = () => {
-        if(loading) {
-            return <div>Loading Authors....</div>
-        } else {
-            return authors.map(author => {
-                return <option key={author.id} value={author.id}>{author.name}</option>
-            })
+    
+    const displayAuthors = () => {
+            if(loading) {
+                return <option>Loading Authors....</option>
+            } else {
+                return authors.map(author => {
+                    return <option key={author.id} value={author.id}>{author.name}</option>
+                })
+            }
         }
+    const submitBook = () => {
+        var newBook = {"name":name,"genre":genre,"authorId":id}
+        addBookMutation()
     }
 
     return (
         <div id="authorsContainer">
-            <form id="authorf">
+            <div id="authorForm">
                 <div className="field">
-                    <input placeholder="Book Name" type="text"/>
+                    <input onChange={(e) => updateName(e.target.value)} placeholder="Book Name" type="text"/>
                 </div>
                 <div className="field">
-                    <input placeholder="Genre" type="text"/>
+                    <input onChange={(e) => updateGenre(e.target.value)} placeholder="Genre" type="text"/>
                 </div>
                 <div className="field">
-                    <select>
+                    <select onChange={(e) => updateId(e.target.value)}>
                         <option>Select Author</option>
                         {displayAuthors()}
                     </select>
                 </div>
-                <button>Submit</button>
-            </form>
+                <button onClick={() => submitBook()}>Submit</button>
+            </div>
         </div>
     )
 }
 // Wrap graphQL over component passing in the query function
-export default graphql(getAuthorsQuery)(AddBook)
+export default compose(
+    graphql(getAuthorsQuery, { name:"getAuthorsQuery"}),
+    graphql(addBookMutation, { name: "addBookMutation" })
+)(AddBook)

@@ -12,24 +12,23 @@ body {
   box-sizing: border-box;
 }
 
-#authorsContainer form {
+#authorsContainer div {
   display: inline-flex;
-  margin: 12px;
+  margin: 4px;
 }
-#authorsContainer form label {
+#authorsContainer div label {
   color: black;
   font-weight: 500;
   padding-bottom: 8px;
 }
-#authorsContainer form div {
-  padding: 2px 12px;
-}
 
-#authorsContainer form button,option {
+
+#authorsContainer div button,option {
   border-radius: 15%;
   width: fit-content;
   margin: 0;
   cursor: pointer;
+  margin: 0;
 
 }
 

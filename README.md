@@ -7,6 +7,27 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
     3. GraphQL
 
+## Package Knowledge
+    1. apollo-boost
+        - Apollo Boost is just a bundle of necessary packages for apollo client
+        1. gql
+            - This package helps parse the data because graphQl is not javascript
+
+    2. react-apollo
+        - React apollo lets you use Apollo client, this allows apollo and react to understand eachother.
+        1. apollo-provider
+            - Used to wrap all of you're components in.) 
+            - Binds Apollo to react & wraps our application
+        2. graphql
+            - Wraps single components so that they can use queries
+            - Ex: export default graphql(queryFunctionName)(AddBook)
+        3. compose
+            - This allows you to wrap single components with mutations & queries
+            - Ex: export default compose(
+                    graphql(getAuthorsQuery, { name:"getAuthorsQuery"}),
+                    graphql(addBookMutation, { name: "addBookMutation" })
+                )(AddBook)
+
 ##Resources
 1.Apollo
     https://www.apollographql.com/docs/react/essentials/get-started

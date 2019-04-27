@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'react-apollo'; // Helps bind apollo to react
-import { getBooksQuery } from '../queries/queries.js';
+import { getBooksQuery } from '../graphQL/queries';
 
  function BookList(props) {
      const { data } = props;
