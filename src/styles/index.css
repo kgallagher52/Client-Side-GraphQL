@@ -4,5 +4,38 @@ body {
   background:         linear-gradient(90deg,#68C4C9, #41c9d6, #37b9e9);
   color: #ffffff;
   font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  
 }
+
+/* Books Table */
+#books-container table {
+  list-style: none;
+  color:rgb(74, 61, 61);
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table-header {
+  font-size: 1rem;
+  border-bottom: 1px solid black;
+  text-transform: uppercase;
+
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  cursor: pointer;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+
 
