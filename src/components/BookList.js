@@ -1,16 +1,6 @@
 import React from 'react';
-import { gql } from 'apollo-boost'; // This package helps parse the data because graphQl is not javascript
 import { graphql } from 'react-apollo'; // Helps bind apollo to react
-
-const getBooksQuery = gql`
-    {
-        books{
-            id
-            name
-            genre
-        }
-    }
-`
+import { getBooksQuery } from '../queries/queries.js';
 
  function BookList(props) {
      const { data } = props;
