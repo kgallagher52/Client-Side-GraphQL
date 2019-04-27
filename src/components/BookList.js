@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { graphql } from 'react-apollo'; // Helps bind apollo to react
 import { getBooksQuery } from '../graphQL/queries';
 
@@ -8,14 +8,15 @@ import BookDetails from './BookDetails';
  function BookList(props) {
      const { data } = props;
      const { books, loading } = data;
+     const [bookId, selectBook] = useState('');
      const displayBooks = () => {
         if(loading) {
             return <tr><th colSpan="6">Loading Books...</th></tr>
         } else {
             return books.map(book => {
                 return( 
-                <tr key={book.id}>
-                    <th>{book.name}</th>
+                <tr className={"books"} key={book.id} onClick={(e) => selectBook(e.target.id)}>
+                    <th id={book.id}>{book.name}</th>
                     <th>{book.genre}</th>
                 </tr>
                 )
@@ -35,7 +36,7 @@ import BookDetails from './BookDetails';
                 {displayBooks()}
             </tbody>
         </table>
-        <BookDetails/>
+        <BookDetails bookId={bookId}/>
     </div>
   )
 }

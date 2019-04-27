@@ -34,7 +34,18 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
         - refetchQueries: [{ query: getAuthorsQuery }]
         
     3. Getting specific data
-        - Ex:  query($id: String) {
+        - example of component code
+                export default graphql(getBookQuery, {
+                options:(props) => {
+                    return {
+                    variables: {
+                        id:props.bookId
+                    }
+                }
+            }
+        })(BookDetails);
+
+        - Ex:  query($id: ID) {
                 book(id: $id) { 
                     id
                     name
@@ -45,6 +56,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
                         }
                     }
                 }
+       
 
 
 ## Package Knowledge
